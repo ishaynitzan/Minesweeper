@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minesweeper</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="initGame()">
+    <h2>minesweeper</h2>
+    <div class="instruction">Hi you! help us to get out of this mess! Try not to
+        step on a mines ☀︎.<br>
+        If you think you found one marked it by right click on it.
+        <br>
+        The numbers indicate the amount of mines the cell touches.
+
+        good luck!
+    </div>
+    <div class="platform">
+        <div class="information">
+            <div class="clock" style="display: inline;">
+                <label id="minutes">00</label>:<label id="seconds">00</label>
+            </div>
+            <div style="display: inline;" onclick="initGame()"><span class="smiley">🙂</span></div>
+            <div style="display: inline;">🚩x <span class="flag">0</span></div>
+        </div>
+        <div class="panel">
+            <div class="lives">
+                <span class="title">Lives</span>
+                <span class="live">❤️</span>
+                <span class="live">❤️</span>
+                <span class="live">❤️</span>
+            </div>
+            <div class="board-container"></div>
+            <div class="hints">
+                <span class="title">Hints</span>
+                <span id='hint1' class="hint" onclick="setIsHint(this)">⚙️</span>
+                <span id='hint2' class="hint" onclick="setIsHint(this)">⚙️</span>
+                <span id='hint3' class="hint" onclick="setIsHint(this)">⚙️</span>
+            </div>
+        </div>
+    </div>
+    <div class="right-container">
+        <span class="safe-click" onclick="safeClick()"> Safe Click</span>
+        <span class="click-left">3</span> <span class="title">clicks available</span>
+        <div class="scores">
+            <span class="title">Best Score</span>
+            <div>
+                <div data-best-Score="0" class="score">
+                    <div class="scores-name">Beginner</div>
+                    <span id='min'>00</span>:<span id='sec'>00</span>
+                </div>
+
+                <div data-best-Score="1" class="score">
+                    <div class="scores-name">Intermediate</div>
+                    <span id='min'>00</span>:<span id='sec'>00</span>
+                </div>
+
+                <div data-best-Score="2" class="score">
+                    <div class="scores-name">Expert</div>
+                    <span id='min'>00</span>:<span id='sec'>00</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="levels">
+        <span class="title">Levels</span>
+        <button data-level-Difficulty="0" class="level" onclick="setLevel(this)">Beginner</button>
+        <button data-level-Difficulty="1" class="level" onclick="setLevel(this)">Intermediate</button>
+        <button data-level-Difficulty="2" class="level" onclick="setLevel(this)">Expert</button>
+        <button class="manually-mines" onclick="manuallyMod()">manually create</button>
+        <button class="manually-mines" onclick="sevenMod()">Seven Boom!</button>
+        <button class="seven-boom" onclick="undo()">UNDO</button>
+    </div>
+
+    <img src="./background/robot.png">
+    <div class="footer">Developer : Ishay Nitzan</div>
+
+    <script src="js/main.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/bonus.js"></script>
+</body>
+
+</html>
